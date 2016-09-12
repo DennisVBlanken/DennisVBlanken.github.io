@@ -1,0 +1,34 @@
+
+body {
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    color: #cc9900;
+    font-family: arial;
+}
+
+h2 {
+    text-align: center;
+    color: #cc9900;
+    font-family: arial;
+}
+
+p {
+   color: #0066cc;
+   font-family: arial black;
+   text-align: center;
+}
+img {
+	
+}
+a {
+	color: #cc9900;
+}
+
+ol {
+	color: #00cc00;
+	margin-left: 500px;
+	margin-right: auto;
+}
