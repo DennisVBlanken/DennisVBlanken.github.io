@@ -2,6 +2,8 @@
 	margin: 0px;
 }
 body{
+	background-image: url(background2.jpg);
+	background-size: 100%;
 	background-color: lightblue;
 	font-family: sans-serif;
 }
@@ -32,6 +34,9 @@ p.top-p{
 	padding-top: 0px;
 	padding-left: 15px;
 }
+div{
+	border-radius: 12px;
+}
 div.top-menu{
 	color: black;
 	background-color: black;
@@ -45,9 +50,11 @@ div.Main{
 	padding-bottom: 20px;
 	margin-top: 20px;
 	padding-top: 5px;
+	border-radius: 12px;
 }
 div.Main2{
 	color: white;
+	border-radius: 12px;
 	background-color: blue;
 	width: 800px;
 	margin: 0 auto;
@@ -67,4 +74,56 @@ img.foto{
 	float: right;
 	width: 150px;
 	margin: 10px;
+}
+img.activ{
+	width: 300px;
+	float: bottom;
+	padding-top: 10px;
+	padding-left: 400px;
+}
+p.bold{
+	font-weight: bold;
+	margin: 10px;
+}
+p.nieuws{
+	margin: 10px;
+}
+div.top-menu{
+	border-radius: 0px;
+	color: black;
+	background-color: black;
+	font-size: 20px;
+	word-spacing: 30px;
+	margin-bottom: 20px;
+}
+div.wrapper{
+	border-spacing: 50px;
+	display: table-row;
+	margin: 0 auto;
+	width: 900px;
+	background-color: white;
+}
+div.bio{
+	display: table-cell;
+	margin: 0 auto;
+	background-color: lightgreen;
+	width: 600px;
+}
+div.destiny{
+	display: table-cell;
+	margin: 0 auto;
+	background-color: green;
+	width: 500px;
+}
+div.kingdom{
+	display: table-cell;
+	margin: 0 auto;
+	background-color: green;
+	width: 500px;
+}
+div.Pokemon{
+	display: table-cell;
+	margin: 0 auto;
+	background-color: lightgreen;
+	width: 600px;
 }
