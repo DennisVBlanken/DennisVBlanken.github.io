@@ -1,0 +1,51 @@
+span{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: solid 1px yellow;
+	margin: 0px;
+	background-color: grey;
+}
+main {
+	width: 660px;
+}
+button{
+	margin: 10px;
+	padding: 5px;
+	font-weight: bolder;
+}
+.apple{
+	background-color: red;
+	color: red;
+}
+.snake{
+	background-color: lime;
+	color: lime;
+}
+.head{
+	background-color: lime;
+}
+.ground{
+	background-color: black;
+	color: black;
+}
+#outline{
+	border: solid 2px black;
+	width: 430px;
+}
+#Counter{
+	background-color: blue;
+	color: black;
+	max-width: 150px;
+	padding: 10px;
+}
+span#score{
+	background-color: blue;
+	border: none;
+}
+#top{
+	background-color: lightblue;
+	color: black;
+	max-width: 150px;
+	padding: 10px;
+}
