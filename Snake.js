@@ -165,35 +165,35 @@ document.onkeydown = function(e){
     e = e || window.event;
     switch(e.which || e.keyCode){
         case 65: // A
-        	direction = 4;
+        	if (direction === 2){return} direction = 4;
         break;
 
         case 37: // Left Arrow
-        	direction = 4;
+        	if (direction === 2){return} direction = 4;
         break;
 
         case 87: // W
-        	direction = 1;
+        	if (direction === 3){return} direction = 1;
         break;
 
         case 38: // Up Arrow
-        	direction = 1;
+        	if (direction === 3){return} direction = 1;
         break;
 
         case 68: // D
-        	direction = 2;
+        	if (direction === 4){return} direction = 2;
         break;
 
         case 39: // Right Arrow
-        	direction = 2;
+        	if (direction === 4){return} direction = 2;
         break;
 
         case 83: // S
-        	direction = 3;
+        	if (direction === 1){return} direction = 3;
         break;
 
         case 40: // Down Arrow
-        	direction = 3;
+        	if (direction === 1){return} direction = 3;
         break;
 
         default: return; // exit this handler for other keys
