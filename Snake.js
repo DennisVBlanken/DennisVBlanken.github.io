@@ -149,7 +149,7 @@ function movementLoop(){
 }
 
 function gainSpeed(){
-	if (speed >= 20) { speed = speed - 20; setTimeout(function() {gainSpeed();}, 250);}
+	if (speed >= 100) { speed = speed - 25; setTimeout(function() {gainSpeed();}, 1000);}
 }
 
 movementLoop();
