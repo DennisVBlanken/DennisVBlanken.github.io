@@ -153,6 +153,7 @@ function gainSpeed(){
 }
 
 movementLoop();
+gainSpeed();
 spawnApple();
 spawnApple();
 spawnApple();
