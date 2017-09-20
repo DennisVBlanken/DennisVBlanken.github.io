@@ -118,7 +118,7 @@ function moveUp(){
 }
 
 var direction = 3;
-var speed = 500;
+var speed = 450;
 var reds = [];
 var tailLength = 5;
 var tailMove = "";
@@ -149,7 +149,7 @@ function movementLoop(){
 }
 
 function gainSpeed(){
-	if (speed >= 100) { speed = speed - 25; setTimeout(function() {gainSpeed();}, 1000);}
+	if (speed >= 200) { speed = speed - 1; setTimeout(function() {gainSpeed();}, 50);}
 }
 
 movementLoop();
