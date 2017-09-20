@@ -1,3 +1,4 @@
+
 span{
 	display: inline-block;
 	width: 20px;
@@ -6,7 +7,12 @@ span{
 	margin: 0px;
 	background-color: grey;
 }
-main {
+main{
+	text-align: center;
+	background-color: black;
+	border: solid 4px yellow;
+	border-radius: 10px;
+	padding: 2px;
 	width: 660px;
 }
 button{
@@ -17,17 +23,22 @@ button{
 .apple{
 	background-color: red;
 	color: red;
+	border-color: lime;
+	border-radius: 10px;
 }
 .snake{
 	background-color: lime;
 	color: lime;
+	border-radius: 10px;
 }
 .head{
 	background-color: lime;
+	border-radius: 10px;
 }
 .ground{
 	background-color: black;
-	color: black;
+	color: transparent;
+	border-radius: 10px;
 }
 #outline{
 	border: solid 2px black;
@@ -38,6 +49,7 @@ button{
 	color: white;
 	max-width: 150px;
 	padding: 10px;
+	border-radius: 12px;
 }
 span#score{
 	background-color: blue;
@@ -49,4 +61,15 @@ span#score{
 	max-width: 150px;
 	padding: 10px;
 	margin: 10px;
+	border-radius: 12px;
+}
+button#START{
+	background-color: white;
+	position: absolute;
+	top: 240px;
+	left: 300px;
+	padding: 10px;
+	z-index: 456;
+	border: solid 2px yellow;
+	border-radius: 12px;
 }
