@@ -20,6 +20,12 @@ button{
 	padding: 5px;
 	font-weight: bolder;
 }
+a{
+	background-color: black;
+	color: white;
+	border-radius: 12px;
+	padding: 10px;
+}
 .apple{
 	background-color: red;
 	color: red;
@@ -44,10 +50,11 @@ button{
 	border: solid 2px black;
 	width: 430px;
 }
-#Counter{
+p#Counter{
 	background-color: blue;
 	color: white;
-	max-width: 150px;
+	max-width: 120px;
+	margin-right: 10px;
 	padding: 10px;
 	border-radius: 12px;
 }
@@ -72,4 +79,16 @@ button#START{
 	z-index: 456;
 	border: solid 2px yellow;
 	border-radius: 12px;
+}
+img#Banana{
+	position: absolute;
+	top: 140px;
+	left: 670px;
+	display: none;
+}
+img#Banana2{
+	position: absolute;
+	top: 440px;
+	left: 250px;
+	display: none;
 }

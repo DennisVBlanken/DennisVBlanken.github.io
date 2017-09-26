@@ -31,10 +31,29 @@ function Death() {
 // score system
 
 var counter = document.getElementById('score');
+var RBanana = document.getElementById('Banana');
+var RBanana2 = document.getElementById('Banana2');
 var score = 0;
+var happ = 0;
 function addScore(amount){
 	score = score + amount;
 	counter.innerHTML = score;
+	Banana();
+}
+
+function Banana() {
+	if (score >= 5000) {
+		if (happ === 0) {
+			happ = 1;
+			RBanana.style.display = 'inline-block';
+		}
+		if (score >= 10000) {
+			if (happ === 1) {
+				happ = 2;
+				RBanana2.style.display = 'inline-block';
+			}
+		}
+	}
 }
 
 // movement
