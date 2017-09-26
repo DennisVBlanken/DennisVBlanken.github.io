@@ -3,8 +3,8 @@
 
 var main = document.getElementById('main');
 
-for (var row = 1; row <= 15; row++) {
-	for (var slot = 1; slot <= 30; slot++) {
+for (var row = 1; row <= 15; row++){
+	for (var slot = 1; slot <= 30; slot++){
 		main.innerHTML = main.innerHTML + '<span class="ground" id="slot'+row+'-'+slot+'">X</span>';
 	}
 }
@@ -14,7 +14,7 @@ var begin = document.getElementById('START');
 var started = 0;
 
 function Start(){
-	if (started === 0) {
+	if (started === 0){
 	movementLoop();
 	spawnApple();spawnApple();spawnApple();spawnApple();
 	started = 1;
@@ -35,20 +35,21 @@ var RBanana = document.getElementById('Banana');
 var RBanana2 = document.getElementById('Banana2');
 var score = 0;
 var happ = 0;
+
 function addScore(amount){
 	score = score + amount;
 	counter.innerHTML = score;
 	Banana();
 }
 
-function Banana() {
-	if (score >= 5000) {
-		if (happ === 0) {
+function Banana(){
+	if (score >= 5000){
+		if (happ === 0){
 			happ = 1;
 			RBanana.style.display = 'inline-block';
 		}
-		if (score >= 10000) {
-			if (happ === 1) {
+		if (score >= 10000){
+			if (happ === 1){
 				happ = 2;
 				RBanana2.style.display = 'inline-block';
 			}
@@ -168,6 +169,10 @@ function spawnApple(){
 	applePos = "slot" + (Math.floor(Math.random() * 15) + 1) + "-" + (Math.floor(Math.random() * 30) + 1);
 	if (document.getElementById(applePos).className == "snake") {spawnApple();}else
 	if (document.getElementById(applePos).className == "apple") {spawnApple();}else
+	if (document.getElementById(applePos).className == document.getElementById(nextPosUp)) {spawnApple();}else
+	if (document.getElementById(applePos).className == document.getElementById(nextPosDown)) {spawnApple();}else
+	if (document.getElementById(applePos).className == document.getElementById(nextPosLeft)) {spawnApple();}else
+	if (document.getElementById(applePos).className == document.getElementById(nextPosRight)) {spawnApple();}else
 	document.getElementById(applePos).innerHTML = "A";
 	document.getElementById(applePos).className = "apple"; 
 }
@@ -227,3 +232,6 @@ document.onkeydown = function(e){
     }
     e.preventDefault(); // prevent the default action (scroll / move caret)
 };
+
+// © Dennis V.B.
+// version 0.9.1
