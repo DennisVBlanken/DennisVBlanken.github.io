@@ -39,7 +39,7 @@ var happ = 0;
 function addScore(amount){
 	score = score + amount;
 	counter.innerHTML = score;
-	Banana();
+	Banana(); Crazy();
 }
 
 function Banana(){
@@ -56,7 +56,21 @@ function Banana(){
 		}
 	}
 }
-
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+function Crazy(){
+	if (speed <= 150) {
+		var color = getRandomColor();
+		var x = document.getElementsByTagName('body');
+		x[0].style.background = color;
+	}
+}
 // movement
 
 var row = 8;
@@ -234,4 +248,4 @@ document.onkeydown = function(e){
 };
 
 // © Dennis V.B.
-// version 0.9.1
+// version 0.9.4

@@ -8,6 +8,7 @@ span{
 	background-color: grey;
 }
 main{
+	margin: 0 auto;
 	text-align: center;
 	background-color: black;
 	border: solid 4px yellow;
@@ -57,6 +58,7 @@ p#Counter{
 	margin-right: 10px;
 	padding: 10px;
 	border-radius: 12px;
+	margin: 10px auto 10px;
 }
 span#score{
 	background-color: blue;
@@ -65,20 +67,19 @@ span#score{
 #top{
 	background-color: lightblue;
 	color: black;
-	max-width: 150px;
+	width: 200px;
 	padding: 10px;
 	margin: 10px;
 	border-radius: 12px;
-}
-button#START{
-	background-color: white;
 	position: absolute;
-	top: 240px;
-	left: 300px;
-	padding: 10px;
-	z-index: 456;
-	border: solid 2px yellow;
-	border-radius: 12px;
+	right: 42%;
+}
+#top p{
+	margin: 5px;
+}
+.bold{
+	font-weight: bold;
+	text-decoration: underline;
 }
 img#Banana{
 	position: absolute;
@@ -91,4 +92,19 @@ img#Banana2{
 	top: 440px;
 	left: 250px;
 	display: none;
+}
+div.center{
+	margin: 10px auto 10px;
+	text-align: center;
+}
+button#START{
+	background-color: white;
+	position: absolute;
+	top: 240px;
+	left: 47.5%;
+	padding: 10px;
+	z-index: 456;
+	border: solid 2px yellow;
+	border-radius: 12px;
+	margin: 0 auto;
 }
