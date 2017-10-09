@@ -248,4 +248,4 @@ document.onkeydown = function(e){
 };
 
 // © Dennis V.B.
-// version 0.9.4
+// version 0.9.6

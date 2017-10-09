@@ -8,24 +8,27 @@ span{
 	background-color: grey;
 }
 main{
-	margin: 0 auto;
 	text-align: center;
 	background-color: black;
 	border: solid 4px yellow;
 	border-radius: 10px;
 	padding: 2px;
 	width: 660px;
+	margin: 20px;
 }
 button{
 	margin: 10px;
 	padding: 5px;
 	font-weight: bolder;
 }
-a{
+div#menu{
 	background-color: black;
 	color: white;
 	border-radius: 12px;
 	padding: 10px;
+}
+#menu a{
+	color: white;
 }
 .apple{
 	background-color: red;
@@ -48,13 +51,20 @@ a{
 	border-radius: 10px;
 }
 #outline{
+	position: absolute;
+	top: 10%;
+	left: 10%;
 	border: solid 2px black;
-	width: 430px;
+	width: 1000px;
+	height: 400px;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: white;
 }
 p#Counter{
 	background-color: blue;
 	color: white;
-	max-width: 120px;
+	max-width: 200px;
 	margin-right: 10px;
 	padding: 10px;
 	border-radius: 12px;
@@ -71,8 +81,6 @@ span#score{
 	padding: 10px;
 	margin: 10px;
 	border-radius: 12px;
-	position: absolute;
-	right: 42%;
 }
 #top p{
 	margin: 5px;
@@ -81,27 +89,59 @@ span#score{
 	font-weight: bold;
 	text-decoration: underline;
 }
+
 img#Banana{
 	position: absolute;
-	top: 140px;
-	left: 670px;
-	display: none;
+	top: 220px;
+	left: 880px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
 }
 img#Banana2{
 	position: absolute;
-	top: 440px;
-	left: 250px;
+	top: 140px;
+	left: -220px;
+	width: 100px;
 	display: none;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+    animation:myanimation 8s linear infinite;
 }
-div.center{
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@keyframes myanimation{
+    0% {
+        left: 6%; top: -4.5%;}
+    25% {
+    	left: 85%; top: -4.5%; -webkit-transform: rotate(0deg);}
+    25.001% {
+    	left: 84.7%; top: -4.5%; -webkit-transform: rotate(90deg);}
+    50% {
+    	left: 84.7%; top: 73.6%; -webkit-transform: rotate(90deg);}
+    50.001% {
+    	left: 84.7%; top: 73.6%; -webkit-transform: rotate(180deg);}
+    75% {
+    	left: 3%; top: 73.6%; -webkit-transform: rotate(180deg);}
+    75.001% {
+    	left: 3%; top: 74%; -webkit-transform: rotate(270deg);}
+    100% {
+    	left: 3%; top: -5%; -webkit-transform: rotate(270deg);}
+}
+.center{
 	margin: 10px auto 10px;
 	text-align: center;
+	float: right;
+	position: relative;
+	top: 20px;
 }
 button#START{
 	background-color: white;
 	position: absolute;
-	top: 240px;
-	left: 47.5%;
+	top: 180px;
+	left: 333px;
 	padding: 10px;
 	z-index: 456;
 	border: solid 2px yellow;
