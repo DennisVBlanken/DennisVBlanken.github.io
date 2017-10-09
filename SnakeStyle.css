@@ -94,6 +94,7 @@ img#Banana{
 	position: absolute;
 	top: 220px;
 	left: 880px;
+	display: none;
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
