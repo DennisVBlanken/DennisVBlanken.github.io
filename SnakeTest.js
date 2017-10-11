@@ -2,15 +2,12 @@
 // generate the "slots" for the game
 
 var main = document.getElementById('main');
-function Generate() {
-main.innerHTML = '';
+
 for (var row = 1; row <= 15; row++){
 	for (var slot = 1; slot <= 30; slot++){
 		main.innerHTML = main.innerHTML + '<span class="ground" id="slot'+row+'-'+slot+'">X</span>';
 	}
 }
-}
-Generate();
 
 document.getElementById('slot8-15').innerHTML = "O";
 var begin = document.getElementById('START');
@@ -22,12 +19,10 @@ function Start(){
 	started = 1;
 	movementLoop();
 	spawnApple();spawnApple();spawnApple();spawnApple();spawnApple();
-	begin.style.display = 'none';
-	pause.style.display = 'inline-block';}
+	begin.style.display = 'none';}
 }
 var pause = document.getElementById('Pause');
 var resume = document.getElementById('Resume');
-var gameover = document.getElementById('GameOver');
 
 function Pause(){
 	if (started === 1) {
@@ -49,18 +44,9 @@ function Resume(){
 // function for when you lose
 
 function Death() {
-	started = 2;
-	gameover.style.display = 'inline-block';
+	started = 0;
 	pause.style.display = 'none';
 	resume.style.display = 'none';
-}
-
-
-function Reset() {
-	if (started === 2) {
-	begin.style.display = 'inline-block';
-	started = 0;
-	Generate();}
 }
 
 // score system
