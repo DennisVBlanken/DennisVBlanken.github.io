@@ -21,7 +21,6 @@ for (var row = 1; row <= 15; row++){
 }
 document.getElementById('slot8-15').innerHTML = "O";
 
-score = 0,
 rowNum = 8,
 position = 15,
 slotPos = "slot"+rowNum+"-"+position,
@@ -73,6 +72,17 @@ function Reset() {
 	reset.style.display = 'none';
 	gameover.style.display = 'none';
 	started = 0;
+	score = 0;
+	reds = [];
+	direction = 2;
+	lastDirection = 2;
+	speed = 450;
+	tailLength = 5;
+	tailMove = "";
+	applePos = "";
+	document.getElementsByTagName('body').style.background = 'white';
+	RBanana.style.display = 'none';
+	RBanana2.style.display = 'none';
 	Generate();}
 }
 
@@ -318,4 +328,4 @@ document.onkeydown = function(e){
 };
 
 // © Dennis V.B.
-// version 1.0.1
+// version 1.0.2
