@@ -1,19 +1,39 @@
 
 // generate the "slots" for the game
 
+var rowNum = 8;
+var position = 15;
+var slotPos = "slot"+rowNum+"-"+position;
+var nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
+var nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
+var nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
+var nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
+
 var main = document.getElementById('main');
+
 function Generate() {
 main.innerHTML = '';
+
 for (var row = 1; row <= 15; row++){
 	for (var slot = 1; slot <= 30; slot++){
 		main.innerHTML = main.innerHTML + '<span class="ground" id="slot'+row+'-'+slot+'">X</span>';
 	}
 }
+document.getElementById('slot8-15').innerHTML = "O";
+
+score = 0,
+rowNum = 8,
+position = 15,
+slotPos = "slot"+rowNum+"-"+position,
+nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1),
+nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1),
+nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position,
+nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
 }
 Generate();
 
-document.getElementById('slot8-15').innerHTML = "O";
 var begin = document.getElementById('START');
+var reset = document.getElementById('RESET');
 var multi = 1;
 var started = 0;
 
@@ -51,6 +71,7 @@ function Resume(){
 function Death() {
 	started = 2;
 	gameover.style.display = 'inline-block';
+	reset.style.display = 'inline-block';
 	pause.style.display = 'none';
 	resume.style.display = 'none';
 }
@@ -59,6 +80,8 @@ function Death() {
 function Reset() {
 	if (started === 2) {
 	begin.style.display = 'inline-block';
+	reset.style.display = 'none';
+	gameover.style.display = 'none';
 	started = 0;
 	Generate();}
 }
@@ -108,28 +131,22 @@ function Crazy(){
 }
 // movement
 
-var row = 8;
-var rowNum = 8;
-var position = 15;
-var slotPos = "slot"+rowNum+"-"+position;
-var nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
-var nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
-var nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
-var nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
-
 function moveRight(){
-	if (position === 30) {Death();}
+	if (position === 30) {Death(); return}
+
 	if (document.getElementById(nextPosRight).innerHTML === "A") {
 		tailLength+= 1; addScore(100*multi); spawnApple(); gainSpeed(10);}
+
 	if (document.getElementById(nextPosRight).innerHTML === "W") {Death();}
+
 	else if (position < 30) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).className = "snake";
 	position = Number(position) + 1;
 	slotPos = "slot"+rowNum+"-"+position;
 	document.getElementById(slotPos).innerHTML = "&copy;";
-	document.getElementById(slotPos).className = "head";
-	}
+	document.getElementById(slotPos).className = "head";}
+
 	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
 	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
 	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
@@ -137,18 +154,21 @@ function moveRight(){
 }
 
 function moveLeft(){
-	if (position === 1) {Death();}
+	if (position === 1) {Death(); return}
+
 	if (document.getElementById(nextPosLeft).innerHTML === "A") {
 		tailLength+= 1; addScore(100*multi); spawnApple(); gainSpeed(10);}
+
 	if (document.getElementById(nextPosLeft).innerHTML === "W") {Death();}
+
 	else if (position > 1) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).className = "snake";
 	position = Number(position) - 1;
 	slotPos = "slot"+rowNum+"-"+position;
 	document.getElementById(slotPos).innerHTML = "&copy;";
-	document.getElementById(slotPos).className = "head";
-	}
+	document.getElementById(slotPos).className = "head";}
+
 	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
 	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
 	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
@@ -156,19 +176,21 @@ function moveLeft(){
 }
 
 function moveDown(){
-	if (rowNum === 15) {Death();}
+	if (rowNum === 15) {Death(); return}
+
 	if (document.getElementById(nextPosDown).innerHTML === "A") {
 		tailLength+= 1; addScore(100*multi); spawnApple(); gainSpeed(10);}
+
 	if (document.getElementById(nextPosDown).innerHTML === "W") {Death();}
+
 	else if (rowNum < 15) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).className = "snake";
-	rowNum = Number(row) + 1;
+	rowNum = Number(rowNum) + 1;
 	slotPos = "slot"+rowNum+"-"+position;
 	document.getElementById(slotPos).innerHTML = "&copy;";
-	document.getElementById(slotPos).className = "head";
-	row = Number(row) + 1;
-	}
+	document.getElementById(slotPos).className = "head";}
+
 	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
 	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
 	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
@@ -176,19 +198,21 @@ function moveDown(){
 }
 
 function moveUp(){
-	if (rowNum === 1) {Death();}
+	if (rowNum === 1) {Death(); return}
+
 	if (document.getElementById(nextPosUp).innerHTML === "A") {
 		tailLength+= 1; addScore(100*multi); spawnApple(); gainSpeed(10);}
+
 	if (document.getElementById(nextPosUp).innerHTML === "W") {Death();}
+
 	else if (rowNum > 1) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).className = "snake";
-	rowNum = Number(row) - 1;
+	rowNum = Number(rowNum) - 1;
 	slotPos = "slot"+rowNum+"-"+position;
 	document.getElementById(slotPos).innerHTML = "&copy;";
-	document.getElementById(slotPos).className = "head";
-	row = Number(row) - 1;
-	}
+	document.getElementById(slotPos).className = "head";}
+
 	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
 	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
 	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
@@ -288,4 +312,4 @@ document.onkeydown = function(e){
 };
 
 // © Dennis V.B.
-// version 0.9.6
+// version 1.0.0

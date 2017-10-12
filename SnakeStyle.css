@@ -94,18 +94,19 @@ span#score{
 
 img#Banana{
 	position: absolute;
-	top: 220px;
-	left: 880px;
+	top: 50%;
+	left: 75%;
+	width: 200px;
 	display: none;
 	pointer-events: none;
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
+    -webkit-animation:spin 6s linear infinite;
+    -moz-animation:spin 6s linear infinite;
+    animation:spin 6s linear infinite;
 }
 img#Banana2{
 	position: absolute;
-	top: 140px;
-	left: -220px;
+	top: 10%;
+	left: -5%;
 	width: 100px;
 	display: none;
     -webkit-animation:spin 4s linear infinite;
@@ -118,21 +119,21 @@ img#Banana2{
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 @keyframes myanimation{
     0% {
-        left: 6%; top: -4.5%;}
+        left: -9.7%; top: -23%;}
     25% {
-    	left: 85%; top: -4.5%; -webkit-transform: rotate(0deg);}
+    	left: 99.8%; top: -23%; -webkit-transform: rotate(0deg);}
     25.001% {
-    	left: 84.7%; top: -4.5%; -webkit-transform: rotate(90deg);}
+    	left: 99.8%; top: -23%; -webkit-transform: rotate(90deg);}
     50% {
-    	left: 84.7%; top: 73.6%; -webkit-transform: rotate(90deg);}
+    	left: 99.8%; top: 99.9%; -webkit-transform: rotate(90deg);}
     50.001% {
-    	left: 84.7%; top: 73.6%; -webkit-transform: rotate(180deg);}
+    	left: 99.8%; top: 99.9%; -webkit-transform: rotate(180deg);}
     75% {
-    	left: 3%; top: 73.6%; -webkit-transform: rotate(180deg);}
+    	left: -9.7%; top: 99.9%; -webkit-transform: rotate(180deg);}
     75.001% {
-    	left: 3%; top: 74%; -webkit-transform: rotate(270deg);}
+    	left: -9.7%; top: 99.9%; -webkit-transform: rotate(270deg);}
     100% {
-    	left: 3%; top: -5%; -webkit-transform: rotate(270deg);}
+    	left: -9.7%; top: -23%; -webkit-transform: rotate(270deg);}
 }
 .center{
 	margin: 10px auto 10px;
@@ -151,6 +152,18 @@ button#START{
 	border: solid 2px yellow;
 	border-radius: 12px;
 	margin: 0 auto;
+}
+button#RESET{
+	background-color: white;
+	position: absolute;
+	top: 180px;
+	left: 333px;
+	padding: 10px;
+	z-index: 456;
+	border: solid 2px yellow;
+	border-radius: 12px;
+	margin: 0 auto;
+	display: none;
 }
 button#Pause{
 	background-color: grey;
@@ -174,6 +187,6 @@ img#GameOver{
 	position: absolute;
 	opacity: 0.7;
 	margin: 26px;
-	border-radius: 12px;
+	border-radius: 10px;
 	display: none;
 }
