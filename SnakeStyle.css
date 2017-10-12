@@ -16,6 +16,32 @@ main{
 	width: 660px;
 	margin: 20px;
 }
+@keyframes blink {
+  0% {
+    background: violet;
+  }
+  14.3% {
+    background: indigo;
+  }
+  28.6% {
+    background: blue;
+  }
+  42.9% {
+    background: green;
+  }
+  57.2% {
+    background: yellow;
+  }
+  71.5% {
+    background: orange;
+  }
+  85.8% {
+    background: red;
+  }
+  100% {
+    background: violet;
+  }
+}
 button{
 	margin: 10px;
 	padding: 5px;

@@ -80,10 +80,10 @@ function Reset() {
 	tailLength = 5;
 	tailMove = "";
 	applePos = "";
-	document.getElementsByTagName('body').style.background = 'white';
 	RBanana.style.display = 'none';
 	RBanana2.style.display = 'none';
-	Generate();}
+	Generate();
+	document.getElementsByTagName('body')[0].style.animation = '';}
 }
 
 // function for when you lose
@@ -125,20 +125,10 @@ function Banana(){
 	}
 }
 // another fun 'distraction' that changes the background color randomly. (activates when you hit max-speed)
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
 function Crazy(){
 	if (speed <= 150) {
-		var color = getRandomColor();
 		var x = document.getElementsByTagName('body');
-		x[0].style.background = color;
+		x[0].style.animation = 'blink 6s linear infinite';
 	}
 }
 
@@ -328,4 +318,4 @@ document.onkeydown = function(e){
 };
 
 // © Dennis V.B.
-// version 1.0.2
+// version 1.0.3
