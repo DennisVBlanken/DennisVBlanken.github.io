@@ -1,6 +1,5 @@
 
-// generate the "slots" for the game
-
+// base values for the movement of the snake
 var rowNum = 8;
 var position = 15;
 var slotPos = "slot"+rowNum+"-"+position;
@@ -9,6 +8,7 @@ var nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
 var nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
 var nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
 
+// generate the "slots" for the game
 var main = document.getElementById('main');
 
 function Generate() {
@@ -32,6 +32,7 @@ nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
 }
 Generate();
 
+// the main functions for the buttons on page
 var begin = document.getElementById('START');
 var reset = document.getElementById('RESET');
 var multi = 1;
@@ -66,17 +67,6 @@ function Resume(){
 	}
 }
 
-// function for when you lose
-
-function Death() {
-	started = 2;
-	gameover.style.display = 'inline-block';
-	reset.style.display = 'inline-block';
-	pause.style.display = 'none';
-	resume.style.display = 'none';
-}
-
-
 function Reset() {
 	if (started === 2) {
 	begin.style.display = 'inline-block';
@@ -86,27 +76,37 @@ function Reset() {
 	Generate();}
 }
 
-// score system
+// function for when you lose
+function Death() {
+	started = 2;
+	gameover.style.display = 'inline-block';
+	reset.style.display = 'inline-block';
+	pause.style.display = 'none';
+	resume.style.display = 'none';
+}
 
+// score system
 var counter = document.getElementById('score');
 var RBanana = document.getElementById('Banana');
 var RBanana2 = document.getElementById('Banana2');
 var score = 0;
-var happ = 0;
 
+// used when you move and when 'apples' are picked up
 function addScore(amount){
 	score = score + amount;
 	counter.innerHTML = score;
 	Banana(); Crazy();
 }
 
+// score pointstreak bonuses 'distractions'
+var happ = 0;
 function Banana(){
-	if (score >= 5000){
+	if (score >= 10000){
 		if (happ === 0){
 			happ = 1;
 			RBanana.style.display = 'inline-block';
 		}
-		if (score >= 10000){
+		if (score >= 20000){
 			if (happ === 1){
 				happ = 2;
 				RBanana2.style.display = 'inline-block';
@@ -114,6 +114,7 @@ function Banana(){
 		}
 	}
 }
+// another fun 'distraction' that changes the background color randomly. (activates when you hit max-speed)
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -122,6 +123,7 @@ function getRandomColor() {
   }
   return color;
 }
+
 function Crazy(){
 	if (speed <= 150) {
 		var color = getRandomColor();
@@ -129,8 +131,8 @@ function Crazy(){
 		x[0].style.background = color;
 	}
 }
-// movement
 
+// all the movement functions
 function moveRight(){
 	if (position === 30) {Death(); return}
 
@@ -219,6 +221,7 @@ function moveUp(){
 	nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
 }
 
+// some base values for variables used later on
 var direction = 2;
 var lastDirection = 2;
 var speed = 450;
@@ -227,12 +230,14 @@ var tailLength = 5;
 var tailMove = "";
 var applePos = "";
 
+// the function for the tail of the snake
 function tail(){
 	tailMove = reds[reds.length - tailLength];
 	document.getElementById(tailMove).innerHTML = "X";
 	document.getElementById(tailMove).className = "ground";
 }
 
+// the function for spawning 'apples' has a slight bug that sometimes makes apple not spawn (about 1 in 450 chance of happening)
 function spawnApple(){
 	applePos = "slot" + (Math.floor(Math.random() * 15) + 1) + "-" + (Math.floor(Math.random() * 30) + 1);
 	if (document.getElementById(applePos).className == "snake") {spawnApple();}else
@@ -245,6 +250,7 @@ function spawnApple(){
 	document.getElementById(applePos).className = "apple"; 
 }
 
+// the function that uses the movement functions to make the snake move according to the direction it is going
 function movementLoop(){
 	if (started === 1) {
 	addScore(1*multi);
@@ -261,12 +267,12 @@ function movementLoop(){
 	}else return;
 }
 
+// the function that increases speed (only used when picking up apples, but could be changed)
 function gainSpeed(spd){
 	if (speed >= 151){ speed = speed - spd;}
 }
 
 // all the buttons used with their functions
-
 document.onkeydown = function(e){
     e = e || window.event;
     switch(e.which || e.keyCode){
@@ -302,7 +308,7 @@ document.onkeydown = function(e){
         	if (lastDirection === 1){return} direction = 3;
         break;
 
-        case 27: // Down Arrow
+        case 27: // Escape
         	Pause();
         break;
 
@@ -312,4 +318,4 @@ document.onkeydown = function(e){
 };
 
 // © Dennis V.B.
-// version 1.0.0
+// version 1.0.1
