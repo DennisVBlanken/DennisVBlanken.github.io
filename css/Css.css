@@ -1,0 +1,87 @@
+
+body{
+	background-color: grey;
+	font-family: Tahoma;
+}
+img{
+	border: solid 4px black;
+	border-radius: 10px;
+	margin: 10px;
+	width: 700px;
+	position: relative;
+	right: 100px;
+}
+button{
+	padding: 10px;
+	margin: 10px;
+	border-radius: 6px;
+	font-weight: bolder;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#option4{
+	display: none;
+}
+#level_title{
+	font-weight: bold;
+	padding: 10px;
+}
+#reset{
+	position: relative;
+	bottom: 20px;
+}
+
+
+span{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: solid 2px black;
+	margin: 0px;
+	background-color: grey;
+}
+#gameButton{
+	margin: 10px;
+	padding: 5px;
+	font-weight: bolder;
+}
+.wall{
+	background-color: black; 
+}
+#slot1-1{
+	background-color: green;
+}
+#outline{
+	border: solid 2px black;
+	width: 432px;
+	text-align: center;
+}
+#Outer{
+	position: absolute;
+	top: 110px;
+	width: 950px;
+	background-color: grey;
+}
+#pos{
+	position: relative;
+	left: 700px;
+	top: 10px;
+}
+#Inventory{
+	border: solid 4px black;
+	border-radius: 15px;
+	width: 110px;
+	height: 130px;
+	position: relative;
+	left: 50px;
+	float: left;
+	background-color: lightgrey;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+b{
+	padding-left: 10px;
+	position: relative;
+	top: 3px;
+}
+#Mini-Game{
+	margin-top: 580px;
+}
