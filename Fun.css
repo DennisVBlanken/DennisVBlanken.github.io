@@ -1,0 +1,148 @@
+*{
+  text-align: center;
+  border: solid black 4px;
+  border-radius: 50%;
+}
+body{
+  background-color: black;
+}
+#flexbox{
+  display: inline-flex;
+}
+#dot{
+  position: relative;
+  border: none;
+  top: 40px;
+}
+#Outline1{
+  animation:blinkone 0.4s linear infinite;
+  margin-right: 50px;
+  width: 500px;
+  height: 500px;
+  -webkit-transform: rotate(90deg);
+}
+#Outline2{
+  animation:blinktwo 0.4s linear infinite;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  width: 400px;
+  height: 400px;
+}
+#Outline3{
+  animation:blinkthree 0.4s linear infinite;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  width: 300px;
+  height: 300px;
+}
+#Outline4{
+  animation:blinkfour 0.4s linear infinite;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+}
+#Outline5{
+  animation:blinkfive 0.4s linear infinite;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+}
+#Outline1Rev{
+  animation:blinkone 0.4s linear infinite;
+  animation-direction: reverse;
+  margin-right: 50px;
+  width: 500px;
+  height: 500px;
+}
+#Outline2Rev{
+  animation:blinktwo 0.4s linear infinite;
+  animation-direction: reverse;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  width: 400px;
+  height: 400px;
+}
+#Outline3Rev{
+  animation:blinkthree 0.4s linear infinite;
+  animation-direction: reverse;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  width: 300px;
+  height: 300px;
+}
+#Outline4Rev{
+  animation:blinkfour 0.4s linear infinite;
+  animation-direction: reverse;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+}
+#Outline5Rev{
+  animation:blinkfive 0.4s linear infinite;
+  animation-direction: reverse;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+}
+@keyframes blinkone {
+  0% {background: violet;}
+  14.3% {background: red;}
+  28.6% {background: orange;}
+  42.9% {background: yellow;}
+  57.2% {background: green;}
+  71.5% {background: blue;}
+  85.8% {background: indigo;}
+  100% {background: violet;}
+}
+@keyframes blinktwo {
+  0% {background: red;}
+  14.3% {background: orange;}
+  28.6% {background: yellow;}
+  42.9% {background: green;}
+  57.2% {background: blue;}
+  71.5% {background: indigo;}
+  85.8% {background: violet;}
+  100% {background: red;}
+}
+@keyframes blinkthree {
+  0% {background: orange;}
+  14.3% {background: yellow;}
+  28.6% {background: green;}
+  42.9% {background: blue;}
+  57.2% {background: indigo;}
+  71.5% {background: violet;}
+  85.8% {background: red;}
+  100% {background: orange;}
+}
+@keyframes blinkfour {
+  0% {background: yellow;}
+  14.3% {background: green;}
+  28.6% {background: blue;}
+  42.9% {background: indigo;}
+  57.2% {background: violet;}
+  71.5% {background: red;}
+  85.8% {background: orange;}
+  100% {background: yellow;}
+}
+@keyframes blinkfive {
+  0% {background: green;}
+  14.3% {background: blue;}
+  28.6% {background: indigo;}
+  42.9% {background: violet;}
+  57.2% {background: red;}
+  71.5% {background: orange;}
+  85.8% {background: yellow;}
+  100% {background: green;}
+}
