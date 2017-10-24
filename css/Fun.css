@@ -1,6 +1,6 @@
 *{
   text-align: center;
-  border: solid black 4px;
+  border: solid black 2px;
   border-radius: 50%;
 }
 body{
@@ -12,14 +12,31 @@ body{
 #dot{
   position: relative;
   border: none;
+  font-size: 12px;
   top: 40px;
+}
+#spin{
+  position: relative;
+  top: 15px;
+  width: 502px;
+  height: 502px;
+  margin: 10px;
+  animation: spin 0.9s linear infinite;
+}
+#spin2{
+  position: relative;
+  top: 15px;
+  width: 502px;
+  height: 502px;
+  margin: 10px;
+  animation: spin 0.9s linear infinite;
+  animation-direction: reverse;
 }
 #Outline1{
   animation:blinkone 0.4s linear infinite;
   margin-right: 50px;
   width: 500px;
   height: 500px;
-  -webkit-transform: rotate(90deg);
 }
 #Outline2{
   animation:blinktwo 0.4s linear infinite;
@@ -95,6 +112,13 @@ body{
   left: 50px;
   width: 100px;
   height: 100px;
+}
+@keyframes spin {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(90deg);}
+  50% {transform: rotate(180deg);}
+  75% {transform: rotate(270deg);}
+  100% {transform: rotate(360deg);}
 }
 @keyframes blinkone {
   0% {background: violet;}
