@@ -28,7 +28,6 @@ var state = 1;
 var jumpState = 1;
 
 var luck = Math.floor((Math.random() * 100) + 1);
-luckCounter.innerHTML = "Luck: " + luck;
 
 textTop.innerHTML = 'Start het spel';
 // an array of the items the player can get in the game.
@@ -54,7 +53,6 @@ function reset(){
 	opt3.style.display = "inline-block";
 	opt4.style.display = "none";
 	luck = Math.floor((Math.random() * 100) + 1);
-	luckCounter.innerHTML = "Luck: " + luck;
 	jumpState = 1;
 	alert("Try again!");
 }
@@ -194,7 +192,7 @@ function Shop(){
 		else{alert("You do not have enough gold.")}};
 	opt3.onclick = function(){ if(gold >= 50){getItem("key"); payGold(50); alert("You bought a key, but what is it for?"); Shop()}
 		else{alert("You do not have enough gold.")}};
-	opt4.onclick = function(){ level3A()};
+	opt4.onclick = level3A;
 	if(level_image && level_image.style) {
     level_image.style.width = '450px';}
 }
@@ -233,14 +231,14 @@ function level3Bb(){
 //Dungeon lvl 4
 function level4(){
 	console.log("level-4")
-	opt1.innerHTML = "";
-	opt2.innerHTML = "";
-	opt3.innerHTML = "";
+	opt1.innerHTML = "Go back";
+	opt2.innerHTML = "Search all the rooms";
+	opt3.innerHTML = "Next floor";
 	opt4.style.display = "inline-block";
 	opt4.innerHTML = "Help the random mage fight";
 	levelImg.src = "Level Images/Dungeon4.png";
 	textTop.innerHTML = "";
-	opt1.onclick = function(){ };
+	opt1.onclick = level3;
 	opt2.onclick = function(){ };
 	opt3.onclick = function(){ };
 	opt4.onclick = function(){ };
