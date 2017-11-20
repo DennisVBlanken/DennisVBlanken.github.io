@@ -89,7 +89,7 @@ function getItem(a){
 }
 //Used to add health to the variable
 function getHealth(a){
-	playerHealth = playerHealth + a;
+	playerHealth += a;
 	if (playerHealth >= maxHealth) {playerHealth = maxHealth;}
 	playerHealthBar.innerHTML = "HP: " +  playerHealth;
 	return playerHealth

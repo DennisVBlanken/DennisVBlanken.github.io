@@ -1,13 +1,10 @@
-*{
-  text-align: center;
-  border: solid black 2px;
-  border-radius: 50%;
-}
+
 body{
-  background-color: black;
+  background-color: white;
 }
 #flexbox{
   display: inline-flex;
+  position: relative;
 }
 #dot{
   position: relative;
@@ -34,12 +31,18 @@ body{
 }
 #Outline1{
   animation:blinkone 0.4s linear infinite;
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 50%;
   margin-right: 50px;
   width: 500px;
   height: 500px;
 }
 #Outline2{
   animation:blinktwo 0.4s linear infinite;
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 50%;
   position: relative;
   top: 50px;
   left: 50px;
@@ -48,6 +51,9 @@ body{
 }
 #Outline3{
   animation:blinkthree 0.4s linear infinite;
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 50%;
   position: relative;
   top: 50px;
   left: 50px;
@@ -56,6 +62,9 @@ body{
 }
 #Outline4{
   animation:blinkfour 0.4s linear infinite;
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 50%;
   position: relative;
   top: 50px;
   left: 50px;
@@ -64,6 +73,9 @@ body{
 }
 #Outline5{
   animation:blinkfive 0.4s linear infinite;
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 50%;
   position: relative;
   top: 50px;
   left: 50px;
@@ -72,6 +84,9 @@ body{
 }
 #Outline1Rev{
   animation:blinkone 0.4s linear infinite;
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 50%;
   animation-direction: reverse;
   margin-right: 50px;
   width: 500px;
@@ -79,6 +94,9 @@ body{
 }
 #Outline2Rev{
   animation:blinktwo 0.4s linear infinite;
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 50%;
   animation-direction: reverse;
   position: relative;
   top: 50px;
@@ -88,6 +106,9 @@ body{
 }
 #Outline3Rev{
   animation:blinkthree 0.4s linear infinite;
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 50%;
   animation-direction: reverse;
   position: relative;
   top: 50px;
@@ -97,6 +118,9 @@ body{
 }
 #Outline4Rev{
   animation:blinkfour 0.4s linear infinite;
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 50%;
   animation-direction: reverse;
   position: relative;
   top: 50px;
@@ -106,6 +130,9 @@ body{
 }
 #Outline5Rev{
   animation:blinkfive 0.4s linear infinite;
+  text-align: center;
+  border: solid black 2px;
+  border-radius: 50%;
   animation-direction: reverse;
   position: relative;
   top: 50px;
