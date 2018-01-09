@@ -138,4 +138,7 @@ document.onkeydown = function(e) {
     e.preventDefault(); // prevent the default action (scroll / move caret)
 };
 
-Build(5, 10);
+function Level1() {
+	Build(5,10);Build(5,11);Build(5,12);Build(5,13);Build(3,5);Build(1,4);Build(7,2);Build(4,11);Build(4,5);Build(4,4);Build(4,2);Build(4,1);Build(1,8);Build(7,3);Build(7,14);Build(6,5);Build(5,7);Build(4,8);Build(8,10);Build(10,12);Build(13,14);Build(10,15);Build(8,6);Build(9,6);Build(10,6);Build(11,6);Build(12,6);Build(13,6);Build(10,3);Build(11,3);Build(12,3);Build(14,2);Build(14,5);Build(12,9);Build(13,10);Build(14,12);Build(14,10);Build(9,7);Build(9,8);Build(10,4);Build(2,12);Build(3,13);Build(12,14);Build(10,11);Build(7,11);Build(15,12);Build(15,15);Build(12,8);Build(7,10);Build(3,14);
+}
+Level1();
