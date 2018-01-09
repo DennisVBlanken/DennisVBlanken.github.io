@@ -1,87 +1,101 @@
 
-var row = 1;
-var rowNum = 1;
-var position = 1;
-var slotPos = "slot"+rowNum+"-"+position;
-var passed = 0;
-var nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
-var nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
-var nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
-var nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
+// base values for the movement
+var Y = 1;
+var X = 1;
+var slotPos = "slot"+Y+"-"+X;
+var Xp = "slot"+Y+"-"+(Number(X) + 1);
+var Xm = "slot"+Y+"-"+(Number(X) - 1);
+var Yp = "slot"+(Number(Y) + 1)+"-"+X;
+var Ym = "slot"+(Number(Y) - 1)+"-"+X;
+
+function Generate() {
+main.innerHTML = '';
+for (var row = 1; row <= 15; row++){
+	for (var slot = 1; slot <= 15; slot++){
+		main.innerHTML = main.innerHTML + '<span class="ground" id="slot'+row+'-'+slot+'">X</span>';
+	}
+}
+Y = 1;
+X = 1;
+slotPos = "slot"+Y+"-"+X;
+Xp = "slot"+Y+"-"+(Number(X) + 1);
+Xm = "slot"+Y+"-"+(Number(X) - 1);
+Yp = "slot"+(Number(Y) + 1)+"-"+X;
+Ym = "slot"+(Number(Y) - 1)+"-"+X;
+}
+Generate();
 
 function moveRight(){
-	if (position === 18) {return}
-	if (document.getElementById(nextPosRight).innerHTML === "W") {}
-	else if (position < 18) {
+	if (X === 15) {return}
+	if (document.getElementById(Xp).innerHTML === "W") {return}
+	if (X < 15) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).style.background = "red";
-	position = Number(position) + 1;
-	slotPos = "slot"+rowNum+"-"+position;
-	passed = passed + 1;
+	X = Number(X) + 1;
+	slotPos = "slot"+Y+"-"+X;
 	document.getElementById(slotPos).innerHTML = "O";
 	document.getElementById(slotPos).style.background = "green";
 	}
-	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
-	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
-	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
-	nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
-	console.log(passed)
+	Xp = "slot"+Y+"-"+(Number(X) + 1);
+	Xm = "slot"+Y+"-"+(Number(X) - 1);
+	Yp = "slot"+(Number(Y) + 1)+"-"+X;
+	Ym = "slot"+(Number(Y) - 1)+"-"+X;
 }
 
 function moveLeft(){
-	if (position === 1) {return}
-	if (document.getElementById(nextPosLeft).innerHTML === "W") {}
-	else if (position > 1) {
+	if (X === 1) {return}
+	if (document.getElementById(Xm).innerHTML === "W") {}
+	else if (X > 1) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).style.background = "red";
-	position = Number(position) - 1;
-	slotPos = "slot"+rowNum+"-"+position;
-	passed = passed + 1;
+	X = Number(X) - 1;
+	slotPos = "slot"+Y+"-"+X;
 	document.getElementById(slotPos).innerHTML = "O";
 	document.getElementById(slotPos).style.background = "green";
 	}
-	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
-	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
-	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
-	nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
+	Xp = "slot"+Y+"-"+(Number(X) + 1);
+	Xm = "slot"+Y+"-"+(Number(X) - 1);
+	Yp = "slot"+(Number(Y) + 1)+"-"+X;
+	Ym = "slot"+(Number(Y) - 1)+"-"+X;
 }
 
 function moveDown(){
-	if (rowNum === 9) {return}
-	if (document.getElementById(nextPosDown).innerHTML === "W") {}
-	else if (rowNum < 9) {
+	if (Y === 15) {return}
+	if (document.getElementById(Yp).innerHTML === "W") {}
+	else if (Y < 15) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).style.background = "red";
-	rowNum = Number(row) + 1;
-	slotPos = "slot"+rowNum+"-"+position;
-	passed = passed + 1;
+	Y = Number(Y) + 1;
+	slotPos = "slot"+Y+"-"+X;
 	document.getElementById(slotPos).innerHTML = "O";
 	document.getElementById(slotPos).style.background = "green";
-	row = Number(row) + 1;
 	}
-	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
-	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
-	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
-	nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
+	Xp = "slot"+Y+"-"+(Number(X) + 1);
+	Xm = "slot"+Y+"-"+(Number(X) - 1);
+	Yp = "slot"+(Number(Y) + 1)+"-"+X;
+	Ym = "slot"+(Number(Y) - 1)+"-"+X;
 }
 
 function moveUp(){
-	if (rowNum === 1) {return}
-	if (document.getElementById(nextPosUp).innerHTML === "W") {}
-	else if (rowNum > 1) {
+	if (Y === 1) {return}
+	if (document.getElementById(Ym).innerHTML === "W") {}
+	else if (Y > 1) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).style.background = "red";
-	rowNum = Number(row) - 1;
-	slotPos = "slot"+rowNum+"-"+position;
-	passed = passed + 1;
+	Y = Number(Y) - 1;
+	slotPos = "slot"+Y+"-"+X;
 	document.getElementById(slotPos).innerHTML = "O";
-	document.getElementById(slotPos).style.background = "green";
-	row = Number(row) - 1;
-	}
-	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
-	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
-	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
-	nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
+	document.getElementById(slotPos).style.background = "green";	}
+	Xp = "slot"+Y+"-"+(Number(X) + 1);
+	Xm = "slot"+Y+"-"+(Number(X) - 1);
+	Yp = "slot"+(Number(Y) + 1)+"-"+X;
+	Ym = "slot"+(Number(Y) - 1)+"-"+X;
+}
+
+function Build(px, py) {
+	var pwall = "slot"+px+"-"+py;
+	document.getElementById(pwall).innerHTML = "W";
+	document.getElementById(pwall).style.background = "black";
 }
 
 document.onkeydown = function(e) {
@@ -123,3 +137,5 @@ document.onkeydown = function(e) {
     }
     e.preventDefault(); // prevent the default action (scroll / move caret)
 };
+
+Build(5, 10);

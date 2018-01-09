@@ -1,12 +1,12 @@
 
 // base values for the movement of the snake
-var rowNum = 8;
-var position = 15;
-var slotPos = "slot"+rowNum+"-"+position;
-var nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
-var nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
-var nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
-var nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
+var Y = 8;
+var X = 15;
+var slotPos = "slot"+Y+"-"+X;
+var Xp = "slot"+Y+"-"+(Number(X) + 1);
+var Xm = "slot"+Y+"-"+(Number(X) - 1);
+var Ym = "slot"+(Number(Y) - 1)+"-"+X;
+var Yp = "slot"+(Number(Y) + 1)+"-"+X;
 
 // generate the "slots" for the game
 var main = document.getElementById('main');
@@ -21,13 +21,13 @@ for (var row = 1; row <= 15; row++){
 }
 document.getElementById('slot8-15').innerHTML = "O";
 
-rowNum = 8,
-position = 15,
-slotPos = "slot"+rowNum+"-"+position,
-nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1),
-nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1),
-nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position,
-nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
+Y = 8,
+X = 15,
+slotPos = "slot"+Y+"-"+X,
+Xp = "slot"+Y+"-"+(Number(X) + 1),
+Xm = "slot"+Y+"-"+(Number(X) - 1),
+Ym = "slot"+(Number(Y) - 1)+"-"+X,
+Yp = "slot"+(Number(Y) + 1)+"-"+X;
 }
 Generate();
 
@@ -134,91 +134,91 @@ function Crazy(){
 
 // all the movement functions
 function moveRight(){
-	if (position === 30) {Death(); return}
+	if (X === 30) {Death(); return}
 
-	if (document.getElementById(nextPosRight).innerHTML === "A") {
+	if (document.getElementById(Xp).innerHTML === "A") {
 		tailLength+= 1; addScore(100*multi); spawnApple(); gainSpeed(10);}
 
-	if (document.getElementById(nextPosRight).innerHTML === "W") {Death();}
+	if (document.getElementById(Xp).innerHTML === "W") {Death();}
 
-	else if (position < 30) {
+	else if (X < 30) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).className = "snake";
-	position = Number(position) + 1;
-	slotPos = "slot"+rowNum+"-"+position;
+	X = Number(X) + 1;
+	slotPos = "slot"+Y+"-"+X;
 	document.getElementById(slotPos).innerHTML = "&copy;";
 	document.getElementById(slotPos).className = "head";}
 
-	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
-	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
-	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
-	nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
+	Xp = "slot"+Y+"-"+(Number(X) + 1);
+	Xm = "slot"+Y+"-"+(Number(X) - 1);
+	Ym = "slot"+(Number(Y) - 1)+"-"+X;
+	Yp = "slot"+(Number(Y) + 1)+"-"+X;
 }
 
 function moveLeft(){
-	if (position === 1) {Death(); return}
+	if (X === 1) {Death(); return}
 
-	if (document.getElementById(nextPosLeft).innerHTML === "A") {
+	if (document.getElementById(Xm).innerHTML === "A") {
 		tailLength+= 1; addScore(100*multi); spawnApple(); gainSpeed(10);}
 
-	if (document.getElementById(nextPosLeft).innerHTML === "W") {Death();}
+	if (document.getElementById(Xm).innerHTML === "W") {Death();}
 
-	else if (position > 1) {
+	else if (X > 1) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).className = "snake";
-	position = Number(position) - 1;
-	slotPos = "slot"+rowNum+"-"+position;
+	X = Number(X) - 1;
+	slotPos = "slot"+Y+"-"+X;
 	document.getElementById(slotPos).innerHTML = "&copy;";
 	document.getElementById(slotPos).className = "head";}
 
-	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
-	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
-	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
-	nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
+	Xp = "slot"+Y+"-"+(Number(X) + 1);
+	Xm = "slot"+Y+"-"+(Number(X) - 1);
+	Ym = "slot"+(Number(Y) - 1)+"-"+X;
+	Yp = "slot"+(Number(Y) + 1)+"-"+X;
 }
 
 function moveDown(){
-	if (rowNum === 15) {Death(); return}
+	if (Y === 15) {Death(); return}
 
-	if (document.getElementById(nextPosDown).innerHTML === "A") {
+	if (document.getElementById(Yp).innerHTML === "A") {
 		tailLength+= 1; addScore(100*multi); spawnApple(); gainSpeed(10);}
 
-	if (document.getElementById(nextPosDown).innerHTML === "W") {Death();}
+	if (document.getElementById(Yp).innerHTML === "W") {Death();}
 
-	else if (rowNum < 15) {
+	else if (Y < 15) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).className = "snake";
-	rowNum = Number(rowNum) + 1;
-	slotPos = "slot"+rowNum+"-"+position;
+	Y = Number(Y) + 1;
+	slotPos = "slot"+Y+"-"+X;
 	document.getElementById(slotPos).innerHTML = "&copy;";
 	document.getElementById(slotPos).className = "head";}
 
-	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
-	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
-	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
-	nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
+	Xp = "slot"+Y+"-"+(Number(X) + 1);
+	Xm = "slot"+Y+"-"+(Number(X) - 1);
+	Ym = "slot"+(Number(Y) - 1)+"-"+X;
+	Yp = "slot"+(Number(Y) + 1)+"-"+X;
 }
 
 function moveUp(){
-	if (rowNum === 1) {Death(); return}
+	if (Y === 1) {Death(); return}
 
-	if (document.getElementById(nextPosUp).innerHTML === "A") {
+	if (document.getElementById(Ym).innerHTML === "A") {
 		tailLength+= 1; addScore(100*multi); spawnApple(); gainSpeed(10);}
 
-	if (document.getElementById(nextPosUp).innerHTML === "W") {Death();}
+	if (document.getElementById(Ym).innerHTML === "W") {Death();}
 
-	else if (rowNum > 1) {
+	else if (Y > 1) {
 	document.getElementById(slotPos).innerHTML = "W";
 	document.getElementById(slotPos).className = "snake";
-	rowNum = Number(rowNum) - 1;
-	slotPos = "slot"+rowNum+"-"+position;
+	Y = Number(Y) - 1;
+	slotPos = "slot"+Y+"-"+X;
 	document.getElementById(slotPos).innerHTML = "&copy;";
 	document.getElementById(slotPos).className = "head";}
 
-	nextPosRight = "slot"+rowNum+"-"+(Number(position) + 1);
-	nextPosLeft = "slot"+rowNum+"-"+(Number(position) - 1);
-	nextPosUp = "slot"+(Number(rowNum) - 1)+"-"+position;
-	nextPosDown = "slot"+(Number(rowNum) + 1)+"-"+position;
+	Xp = "slot"+Y+"-"+(Number(X) + 1);
+	Xm = "slot"+Y+"-"+(Number(X) - 1);
+	Ym = "slot"+(Number(Y) - 1)+"-"+X;
+	Yp = "slot"+(Number(Y) + 1)+"-"+X;
 }
 
 // some base values for variables used later on
@@ -242,10 +242,10 @@ function spawnApple(){
 	applePos = "slot" + (Math.floor(Math.random() * 15) + 1) + "-" + (Math.floor(Math.random() * 30) + 1);
 	if (document.getElementById(applePos).className == "snake") {spawnApple();}else
 	if (document.getElementById(applePos).className == "apple") {spawnApple();}else
-	if (document.getElementById(applePos).className == document.getElementById(nextPosUp)) {spawnApple();}else
-	if (document.getElementById(applePos).className == document.getElementById(nextPosDown)) {spawnApple();}else
-	if (document.getElementById(applePos).className == document.getElementById(nextPosLeft)) {spawnApple();}else
-	if (document.getElementById(applePos).className == document.getElementById(nextPosRight)) {spawnApple();}else
+	if (document.getElementById(applePos).className == document.getElementById(Ym)) {spawnApple();}else
+	if (document.getElementById(applePos).className == document.getElementById(Yp)) {spawnApple();}else
+	if (document.getElementById(applePos).className == document.getElementById(Xm)) {spawnApple();}else
+	if (document.getElementById(applePos).className == document.getElementById(Xp)) {spawnApple();}else
 	document.getElementById(applePos).innerHTML = "A";
 	document.getElementById(applePos).className = "apple"; 
 }
