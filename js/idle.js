@@ -1,3 +1,4 @@
+// setting some base values:
 amount = 0;
 income = 0;
 cvalue = 1;
@@ -11,16 +12,20 @@ counter1 = document.getElementById('1counter');
 cprice1 = document.getElementById('price1');
 counter2 = document.getElementById('2counter');
 cprice2 = document.getElementById('price2');
-setInterval(gain, 1000);
 
+// setting the inteval for the main gaining function
+setInterval(gain, 1000);
+// the main function that is used every second to increase the amount by income
 function gain(){
 	amount = amount + income;
 	counter.innerHTML = roundNum(amount, 1);
 }
+// function for the clicking
 function clikk(){
 	amount = amount + cvalue;
 	counter.innerHTML = roundNum(amount, 1);
 }
+// buy functions for increasing income
 function buy1(a){
 	if (amount >= (price1 * a)) {
 		amount = amount - (price1 * a);
@@ -46,7 +51,7 @@ function buy2(a){
 	}
 }
 function roundNum(number, digits){
-            var multiple = Math.pow(10, digits);
-            var rNum = Math.round(number * multiple) / multiple;
-            return rNum;
-        }
+    var multiple = Math.pow(10, digits);
+    var rNum = Math.round(number * multiple) / multiple;
+    return rNum;
+}
