@@ -1,10 +1,10 @@
-
+*{
+	user-select: none;
+}
 span{
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	border: solid 1px black;
-	margin: 2px;
 	padding: 10px;
 	background-color: white;
 	color: transparent;
@@ -13,6 +13,7 @@ main{
 	text-align: center;
 	background-color: black;
 	border: solid 2px black;
-	max-width: 506px;
-	max-height: 506px;
+	max-width: 440px;
+	max-height: 440px;
+	border-radius: 2px;
 }
