@@ -1,7 +1,7 @@
 *{
 	user-select: none;
 }
-span{
+span.bg{
 	display: inline-block;
 	width: 20px;
 	height: 20px;
@@ -9,7 +9,7 @@ span{
 	background-color: white;
 	color: transparent;
 }
-main{
+main#main{
 	text-align: center;
 	background-color: black;
 	border: solid 2px black;
