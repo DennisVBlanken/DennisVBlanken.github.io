@@ -36,12 +36,6 @@ p.top-p{
 div{
 	border-radius: 12px;
 }
-div.top-menu{
-	color: black;
-	background-color: black;
-	font-size: 20px;
-	word-spacing: 10px;
-}
 div.Main{
 	background-color: rgb(50,200,150);
 	width: 800px;
@@ -92,7 +86,7 @@ div.top-menu{
 	color: black;
 	background-color: black;
 	font-size: 20px;
-	word-spacing: 30px;
+	word-spacing: 10px;
 	margin-bottom: 20px;
 }
 div.wrapper{
