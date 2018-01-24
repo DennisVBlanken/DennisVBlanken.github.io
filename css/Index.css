@@ -2,7 +2,6 @@
 	margin: 0px;
 }
 body{
-	background-image: url(background2.jpg);
 	background-size: 100%;
 	background-color: lightblue;
 	font-family: sans-serif;
@@ -103,27 +102,5 @@ div.wrapper{
 	width: 900px;
 	background-color: white;
 }
-div.bio{
-	display: table-cell;
-	margin: 0 auto;
-	background-color: lightgreen;
-	width: 600px;
-}
-div.destiny{
-	display: table-cell;
-	margin: 0 auto;
-	background-color: green;
-	width: 500px;
-}
-div.kingdom{
-	display: table-cell;
-	margin: 0 auto;
-	background-color: green;
-	width: 500px;
-}
-div.Pokemon{
-	display: table-cell;
-	margin: 0 auto;
-	background-color: lightgreen;
-	width: 600px;
+.fb-comments{
 }

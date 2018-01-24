@@ -2,11 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+
 <link rel="stylesheet" type="text/css" href="css/Index.css">
 	<title>Hoy</title>
 </head>
 <body>
 <header>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/nl_NL/sdk.js#xfbml=1&version=v2.11';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 	<h1>Hoy</h1>
 	<div class="top-menu">
 	<a href="index">Home</a>
@@ -20,6 +30,7 @@
 	</div>
 </header>
 <div class="Main">
+	<div class="fb-comments" data-href="https://dennisvblanken.github.io/" data-width="500" data-numposts="20"></div>
 </div>
 </body>
 </html>
