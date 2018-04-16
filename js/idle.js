@@ -13,6 +13,7 @@ cprice1 = document.getElementById('price1');
 counter2 = document.getElementById('2counter');
 cprice2 = document.getElementById('price2');
 
+
 // setting the inteval for the main gaining function
 setInterval(gain, 1000);
 // the main function that is used every second to increase the amount by income
@@ -54,4 +55,11 @@ function roundNum(number, digits){
     var multiple = Math.pow(10, digits);
     var rNum = Math.round(number * multiple) / multiple;
     return rNum;
+}
+function save(){
+	if (typeof(Storage) !== "undefined") {
+	    // Code for localStorage/sessionStorage.
+	} else {
+		console.log("Saving not supported" )
+	}	
 }
