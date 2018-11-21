@@ -1,0 +1,12 @@
+
+body {
+	background-color: #f4f4f4;
+	background-image: url('https://cdn.discordapp.com/attachments/372067656670511106/514384913739284480/HeyRaimo.gif');
+	background-size: 42px;
+	margin: 0;
+}
+.game-wrapper {
+	width: 1000px;
+	height: 500px;
+	margin: 5% auto;
+}

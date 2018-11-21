@@ -3,7 +3,7 @@ span{
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	border: solid 1px yellow;
+	border: solid 1px #23272a;
 	margin: 0px;
 	background-color: grey;
 }
